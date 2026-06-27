@@ -1,0 +1,1137 @@
+/* ==========================================
+   Gen-Z Studio
+   Phase 1B
+   Base Styling
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0b0b0b;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#c8a24a;
+    border-radius:20px;
+}
+
+/* Progress Bar */
+
+#progressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:linear-gradient(90deg,#FFD86B,#C79A2B);
+    z-index:9999;
+}
+
+/* ================= Loader ================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    z-index:10000;
+}
+
+.loader-circle{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:6px solid #2d2d2d;
+    border-top:6px solid #d4af37;
+    animation:spin 1s linear infinite;
+}
+
+#loader h2{
+    color:#d4af37;
+    font-size:24px;
+    letter-spacing:2px;
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ================= Navbar ================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+}
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 20px;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+    font-size:22px;
+    font-weight:700;
+    color:#d4af37;
+
+}
+
+.menu-btn{
+
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+
+}
+
+.menu-btn span{
+
+    width:28px;
+    height:3px;
+
+    background:white;
+
+    border-radius:10px;
+
+}
+
+/* Mobile Menu */
+
+.nav-links{
+
+    position:absolute;
+
+    top:72px;
+    left:0;
+
+    width:100%;
+
+    background:#111;
+
+    list-style:none;
+
+    display:none;
+    flex-direction:column;
+
+}
+
+.nav-links.active{
+
+    display:flex;
+
+}
+
+.nav-links li{
+
+    border-bottom:1px solid #222;
+
+}
+
+.nav-links a{
+
+    display:block;
+    padding:18px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#d4af37;
+
+}
+
+/* ================= Hero ================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 25px 60px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#2b2415,#111 45%,#090909);
+
+}
+
+.hero-content{
+
+    max-width:750px;
+
+    z-index:2;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+    line-height:1.25;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    color:#d3d3d3;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.gold{
+
+    background:#d4af37;
+
+    color:#000;
+
+}
+
+.gold:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 30px rgba(212,175,55,.4);
+
+}
+
+.white{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.white:hover{
+
+    background:white;
+    color:black;
+
+}
+
+/* Decorative Glow */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:#d4af37;
+
+    filter:blur(180px);
+
+    opacity:.15;
+
+    top:-100px;
+    right:-120px;
+
+}
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#090909;
+
+}
+
+footer h3{
+
+    color:#d4af37;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#bbbbbb;
+
+    margin-top:8px;
+
+}
+
+/* Tablet */
+
+@media(min-width:768px){
+
+.hero h1{
+
+font-size:56px;
+
+}
+
+.hero-buttons{
+
+flex-direction:row;
+justify-content:center;
+
+}
+
+.nav-links{
+
+display:flex;
+position:static;
+background:none;
+flex-direction:row;
+width:auto;
+
+}
+
+.menu-btn{
+
+display:none;
+
+}
+
+.nav-links li{
+
+border:none;
+
+}
+
+}
+/* ==========================================
+   Phase 2B
+   About • Services • Why Choose Us
+========================================== */
+
+/* General Section */
+
+.section{
+    padding:80px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    font-size:32px;
+    text-align:center;
+    margin-bottom:20px;
+    color:#d4af37;
+    font-weight:700;
+}
+
+.section-text{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#d0d0d0;
+    line-height:1.9;
+    font-size:16px;
+}
+
+/* Grid */
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+    margin-top:50px;
+}
+
+/* Premium Cards */
+
+.card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Gold Line Animation */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:0%;
+    height:3px;
+
+    background:#d4af37;
+
+    transition:.4s;
+
+}
+
+.card:hover::before{
+
+    width:100%;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+
+    box-shadow:0 15px 40px rgba(212,175,55,.15);
+
+}
+
+/* Icons */
+
+.icon{
+
+    width:65px;
+    height:65px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+    background:rgba(212,175,55,.12);
+
+}
+
+/* Card Text */
+
+.card h3{
+
+    margin-bottom:12px;
+
+    font-size:22px;
+
+}
+
+.card p{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+}
+
+/* About Section */
+
+.about{
+
+    background:#0d0d0d;
+
+}
+
+/* Services */
+
+.services{
+
+    background:#101010;
+
+}
+
+/* Why Choose Us */
+
+.why{
+
+    background:#0d0d0d;
+
+}
+
+/* Desktop */
+
+@media(min-width:768px){
+
+.grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(min-width:1100px){
+
+.grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.section-title{
+
+font-size:42px;
+
+}
+
+.section{
+
+padding:110px 20px;
+
+}
+
+}
+/* ==========================================
+   Phase 3B
+   How It Works & Founder
+========================================== */
+
+/* ---------- Process Section ---------- */
+
+.process{
+    background:#101010;
+}
+
+.timeline{
+    position:relative;
+    max-width:850px;
+    margin:50px auto 0;
+    padding-left:35px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:12px;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#d4af37;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:35px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:-30px;
+    top:8px;
+    width:18px;
+    height:18px;
+    background:#d4af37;
+    border-radius:50%;
+    box-shadow:0 0 15px rgba(212,175,55,.5);
+}
+
+.timeline-content{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:22px;
+    transition:.3s;
+}
+
+.timeline-content:hover{
+    transform:translateX(6px);
+    border-color:#d4af37;
+    box-shadow:0 10px 30px rgba(212,175,55,.12);
+}
+
+.timeline-content h3{
+    margin-bottom:10px;
+    color:#d4af37;
+}
+
+.timeline-content p{
+    color:#d0d0d0;
+    line-height:1.8;
+}
+
+/* ---------- Founder ---------- */
+
+.founder{
+    background:#0d0d0d;
+}
+
+.founder-box{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    align-items:center;
+}
+
+.photo-placeholder{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:3px solid #d4af37;
+    background:rgba(255,255,255,.05);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    color:#d4af37;
+    transition:.3s;
+}
+
+.photo-placeholder:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px rgba(212,175,55,.2);
+}
+
+.founder-info{
+    text-align:center;
+    max-width:650px;
+}
+
+.founder-info h3{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.founder-info h4{
+    color:#d4af37;
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.founder-info p{
+    color:#d0d0d0;
+    line-height:1.9;
+}
+
+/* Desktop */
+
+@media(min-width:900px){
+
+    .founder-box{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        gap:70px;
+    }
+
+    .founder-info{
+        text-align:left;
+        flex:1;
+    }
+
+}
+/* ==========================================
+   Phase 4B
+   Testimonials & FAQ
+========================================== */
+
+/* ---------- Testimonials ---------- */
+
+.testimonials{
+    background:#101010;
+}
+
+.review-form{
+    max-width:700px;
+    margin:60px auto 0;
+    padding:30px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    backdrop-filter:blur(12px);
+}
+
+.review-form h3{
+    text-align:center;
+    color:#d4af37;
+    margin-bottom:25px;
+}
+
+.review-form form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea{
+
+    width:100%;
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:14px;
+
+    background:#181818;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus{
+
+    border:1px solid #d4af37;
+    box-shadow:0 0 10px rgba(212,175,55,.2);
+
+}
+
+#reviewList{
+    margin-top:50px;
+}
+
+/* Review Cards */
+
+.review-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+}
+
+.review-card h3{
+
+    color:#d4af37;
+
+    margin-bottom:8px;
+
+}
+
+.review-role{
+
+    color:#bdbdbd;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+
+}
+
+.review-stars{
+
+    margin-bottom:15px;
+
+    font-size:20px;
+
+}
+
+.review-card p{
+
+    line-height:1.8;
+    color:#d6d6d6;
+
+}
+
+/* ---------- FAQ ---------- */
+
+.faq{
+    background:#0d0d0d;
+}
+
+.faq-item{
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    padding:22px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.faq-question:hover{
+
+    color:#d4af37;
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+    padding:0 22px;
+
+}
+
+.faq-item.active .faq-answer{
+
+    max-height:220px;
+
+    padding:0 22px 22px;
+
+}
+/* ==========================================
+   Phase 5B
+   Contact Section
+========================================== */
+
+.contact{
+    background:#101010;
+}
+
+.contact-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+    margin-top:50px;
+}
+
+/* ---------- Contact Cards ---------- */
+
+.contact-info{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.contact-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:28px;
+    backdrop-filter:blur(12px);
+    transition:.35s;
+}
+
+.contact-card:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+    box-shadow:0 12px 30px rgba(212,175,55,.15);
+}
+
+.contact-card h3{
+    color:#d4af37;
+    margin-bottom:12px;
+}
+
+.contact-card p{
+    color:#d0d0d0;
+    margin-bottom:20px;
+    word-break:break-word;
+}
+
+.contact-card .btn{
+    display:inline-block;
+    text-align:center;
+}
+
+/* Disabled Button */
+
+.contact-card button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+/* ---------- Contact Form ---------- */
+
+.contact-form{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:30px;
+    backdrop-filter:blur(12px);
+}
+
+.contact-form h3{
+    text-align:center;
+    color:#d4af37;
+    margin-bottom:25px;
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:14px;
+
+    background:#181818;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border:1px solid #d4af37;
+    box-shadow:0 0 10px rgba(212,175,55,.2);
+
+}
+
+/* Desktop */
+
+@media(min-width:900px){
+
+.contact-wrapper{
+
+flex-direction:row;
+align-items:flex-start;
+
+}
+
+.contact-info{
+
+flex:1;
+
+}
+
+.contact-form{
+
+flex:1.2;
+
+}
+
+}
+/* ==========================================
+   Phase 6B
+   Final Polish
+========================================== */
+
+/* Scroll Reveal */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Back To Top Button */
+
+#backToTop{
+
+    position:fixed;
+
+    bottom:25px;
+    right:20px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#d4af37;
+
+    color:#000;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#backToTop.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+#backToTop:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* Better keyboard focus */
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:2px solid #d4af37;
+    outline-offset:3px;
+
+}
